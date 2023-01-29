@@ -22,17 +22,18 @@
     @apply text-white text-6xl;
   }
 
-  .activeLink{
-    @apply bg-gray-50 text-dark
+  .activeLink {
+    @apply text-customPurple md:bg-gray-50 md:text-dark;
   }
-  .table_data_row{
-    @apply py-2 items-center
+  .table_data_row {
+    @apply py-2 items-center;
   }
-  .table_data_row div{
-    @apply justify-self-center whitespace-nowrap
+  .table_data_row div {
+    @apply justify-self-center whitespace-nowrap;
   }
-  .table_data_row .activity, .table_data_row .client{
-    @apply justify-self-start
+  .table_data_row .activity,
+  .table_data_row .client {
+    @apply justify-self-start;
   }
 }
 
@@ -49,5 +50,37 @@
     125deg,
     rgba(255, 27, 205, 0.06) 0%,
     rgba(179, 160, 255, 0.71) 98.68%
+  );
+}
+
+.orange_gradient {
+  background: linear-gradient(
+    125deg,
+    rgba(255, 111, 7, 0.28) 0%,
+    rgba(228, 123, 0, 0.8) 98.68%
+  );
+}
+
+.green_gradient {
+  background: linear-gradient(
+    125deg,
+    rgba(1, 253, 26, 0.28) 0%,
+    rgba(0, 255, 25, 0.8) 98.68%
+  );
+}
+
+.red_gradient {
+  background: linear-gradient(
+    125deg,
+    rgba(255, 7, 7, 0.28) 0%,
+    rgba(228, 0, 0, 0.8) 98.68%
+  );
+}
+
+.darkblue_gradient {
+  background: linear-gradient(
+    125deg,
+    rgba(1, 26, 253, 0.28) 0%,
+    rgba(0, 41, 255, 0.9) 98.68%
   );
 }

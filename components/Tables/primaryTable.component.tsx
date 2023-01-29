@@ -1,7 +1,13 @@
 import type { BookingOrder, BookingOrderTableProps } from "@/types/booking";
 import Image from "next/image";
 
-const SingleRow = ({ booking, index }: { booking: BookingOrder, index:number }) => {
+const SingleRow = ({
+  booking,
+  index,
+}: {
+  booking: BookingOrder;
+  index: number;
+}) => {
   const statusClass = () => {
     switch (booking.status) {
       case "pending":
@@ -17,7 +23,11 @@ const SingleRow = ({ booking, index }: { booking: BookingOrder, index:number }) 
     }
   };
   return (
-    <div className={`w-full grid grid-cols-[1fr_1.3fr_1.3fr_1fr_.5fr_.5fr_1fr] gap-2 cursor-pointer table_data_row text-center ${index % 2 === 0 && 'bg-gray-200'}`}>
+    <div
+      className={`w-full grid grid-cols-[1fr_1.3fr_1.3fr_1fr_.5fr_.5fr_1fr] gap-2 cursor-pointer table_data_row text-center ${
+        index % 2 === 0 && "bg-gray-200"
+      } hover:bg-gray-400`}
+    >
       <div className="">{booking.bookingId}</div>
       <div className="flex items-center gap-2 activity capitalize">
         <Image
@@ -42,7 +52,9 @@ const SingleRow = ({ booking, index }: { booking: BookingOrder, index:number }) 
       <div>{new Date(booking.bookedAt).toDateString()}</div>
       <div>{booking.qty}</div>
       <div>{booking.price}</div>
-      <div className={`text-white capitalize ${statusClass()} text-sm w-fit px-3 py-2 rounded-lg`}>
+      <div
+        className={`text-white capitalize ${statusClass()} text-sm w-fit px-3 py-2 rounded-lg`}
+      >
         {booking.status}
       </div>
     </div>
@@ -51,19 +63,19 @@ const SingleRow = ({ booking, index }: { booking: BookingOrder, index:number }) 
 
 export const PrimaryTable = ({ data }: BookingOrderTableProps) => {
   return (
-    <div className="w-full rounded-xl overflow-hidden">
+    <div className="w-full rounded-xl overflow-hidden pb-10">
       <div className="grid grid-cols-[1fr_1.3fr_1.3fr_1fr_.5fr_.5fr_1fr] bg-dark text-white gap-2 text-center">
-          {data.headings.length > 0 &&
-            data.headings.map((heading, index) => (
-              <div className="py-4" key={index}>
-                {heading}
-              </div>
-            ))}
+        {data.headings.length > 0 &&
+          data.headings.map((heading, index) => (
+            <div className="py-4" key={index}>
+              {heading}
+            </div>
+          ))}
       </div>
       <div className="bg-gray-100 text-sm">
         {data.rows.length > 0 &&
           data.rows.map((booking, index) => (
-            <SingleRow booking={booking} key={index} index={index}/>
+            <SingleRow booking={booking} key={index} index={index} />
           ))}
       </div>
     </div>

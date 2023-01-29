@@ -31,7 +31,7 @@ export default function Layout(props: LayoutProps) {
       </Head>
       <main className={`overflow-y-hidden flex justify-between ${lexend.className} overflow-hidden`}>
         <Sidebar />
-        <div className="flex-grow overflow-x-hidden">{children}</div>
+        <div className="flex-grow overflow-x-hidden max-w-7xl">{children}</div>
       </main>
     </>
   );
