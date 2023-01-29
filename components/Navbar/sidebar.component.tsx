@@ -9,6 +9,7 @@ import AutoAwesomeMosaicRoundedIcon from "@mui/icons-material/AutoAwesomeMosaicR
 import { Mrs_Sheppards } from "@next/font/google";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 const mrs_sheppards = Mrs_Sheppards({ weight: "400", subsets: ["latin"] });
 
@@ -18,18 +19,18 @@ const navLinks = [
   { title: "Bookings",url:"", icon: <BallotRoundedIcon /> },
   { title: "Messages",url:"", icon: <EmailRoundedIcon /> },
   { title: "Reviews",url:"", icon: <ReviewsRoundedIcon /> },
-  { title: "Promotion",url:"", icon: <CampaignRoundedIcon /> },
+  { title: "Promotion",url:"/promotion", icon: <CampaignRoundedIcon /> },
   { title: "Team",url:"", icon: <GroupsRoundedIcon /> },
   { title: "Shop",url:"", icon: <StoreRoundedIcon /> },
 ];
 
-export default function Sidebar() {
+export const Sidebar = () => {
   const relativePath = useRouter().asPath
-  console.log(relativePath)
   return (
     <div className="flex flex-col items-center justify-between bg-dark text-white h-[100vh] sticky top-0 left-0 pt-[10px]">
+      <Image className="md:hidden cursor-pointer" width={40} height={40} alt="Logo" src="/logo.svg"/>
       <p className={`text-center ${mrs_sheppards.className} text-3xl hidden md:inline`}>Sahuji</p>
-      <ul className="mt-20 md:-mt-[50px]">
+      <ul className="md:-mt-[50px]">
         {navLinks.map((link, index) => (       
             <Link href={link.url} key={index}>
             <li

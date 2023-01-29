@@ -1,6 +1,5 @@
-import { BookingCard } from "@/components/Cards";
-import { PrimaryTable } from "@/components/Tables";
-import { BookingOrderTableProps, TStatus } from "@/types/booking";
+import { BookingTable, BookingCard } from "components";
+import { BookingOrderTableProps } from "@/types/booking";
 import { useMediaQuery } from "react-responsive";
 
 const data: BookingOrderTableProps["data"] = {
@@ -77,15 +76,17 @@ const data: BookingOrderTableProps["data"] = {
   ],
 };
 
-const RecentBookingsSection = () => {
+export const RecentBookings = () => {
   const isLargeScreen = useMediaQuery({ query: "(min-width: 1280px)" });
+
   return (
     <div className="pb-5">
       <h1 className="text-[20px] md:text-3xl uppercase py-5 ">
         recent Bookings
       </h1>
+      
       {isLargeScreen ? (
-        <PrimaryTable data={data} />
+        <BookingTable data={data} />
       ) : (
         <div className="grid lg:grid-cols-2 gap-4">
           {data.rows.map((booking, index) => (
@@ -96,5 +97,3 @@ const RecentBookingsSection = () => {
     </div>
   );
 };
-
-export default RecentBookingsSection;

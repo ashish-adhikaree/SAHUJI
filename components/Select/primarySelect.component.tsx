@@ -29,9 +29,11 @@ const SelectOption = ({
 export const Select = ({
   options,
   selectedOption,
+  className
 }: {
   options: optionType[];
   selectedOption: any;
+  className?:string
 }) => {
   const [selectedTitle, setSelectedTitle] = useState(options[0].title);
   const [selectedValue, setSelectedValue] = useState(options[0].value);
@@ -53,7 +55,7 @@ export const Select = ({
   return (
     <div className="relative">
       <button
-        className="bg-gray-200 px-5 py-[3px] rounded-full whitespace-nowrap"
+        className={`bg-gray-200 px-5 py-[3px] rounded-full whitespace-nowrap ${className}`}
         title={selectedTitle}
         onClick={handleClick}
       >

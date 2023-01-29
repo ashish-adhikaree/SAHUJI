@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import { Button_Var1 } from "@/components/Buttons";
+import { PrimaryButton } from "components";
 
 const activities = [
   {
@@ -67,7 +67,7 @@ const ListItem = ({
   );
 };
 
-const Popular = () => {
+export const Popular = () => {
   const [categorySelected, setCategory] = useState(activities);
   return (
     <div className="">
@@ -75,20 +75,22 @@ const Popular = () => {
         Popular now
       </h1>
       <div className="pb-5">
-        <Button_Var1
+        <PrimaryButton
           isSelected={categorySelected === activities ? true : false}
           onClick={() => {
             setCategory(activities);
           }}
-          title= {"activities"}
-        />
-        <Button_Var1
+        >
+          activities
+        </PrimaryButton>
+        <PrimaryButton
           isSelected={categorySelected === packages ? true : false}
           onClick={() => {
             setCategory(packages);
           }}
-          title= {"packages"}
-        />
+        >
+          packages
+        </PrimaryButton>
       </div>
       {categorySelected.map((service, index) => (
         <ListItem key={index} index={index} service={service} />
@@ -96,5 +98,3 @@ const Popular = () => {
     </div>
   );
 };
-
-export default Popular;

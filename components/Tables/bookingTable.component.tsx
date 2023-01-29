@@ -61,7 +61,7 @@ const SingleRow = ({
   );
 };
 
-export const PrimaryTable = ({ data }: BookingOrderTableProps) => {
+export const BookingTable = ({ data }: BookingOrderTableProps) => {
   return (
     <div className="w-full rounded-xl overflow-hidden pb-10">
       <div className="grid grid-cols-[1fr_1.3fr_1.3fr_1fr_.5fr_.5fr_1fr] bg-dark text-white gap-2 text-center">

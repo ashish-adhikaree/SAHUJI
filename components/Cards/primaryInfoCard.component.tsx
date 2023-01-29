@@ -18,20 +18,20 @@ const InfoCard = ({ title, icon, value, change, gradient }: InfoCardProps) => {
       <h1 className="uppercase text-xl">{title}</h1>
       <div className="">{icon}</div>
       <p className="text-6xl">{value}</p>
-      <p className="py-3 flex items-center w-full justify-center">
+      <div className="py-3 flex items-center w-full justify-center">
         {change > 0 ? (
-          <span className="flex items-center text-green-600">
+          <div className="flex items-center text-green-600">
             {Math.abs(change)}
             <ArrowUpwardRoundedIcon />
-          </span>
+          </div>
         ) : (
-          <span className="flex items-center text-red-600">
+          <div className="flex items-center text-red-600">
             {Math.abs(change)}
             <ArrowDownwardRoundedIcon />
-          </span>
+          </div>
         )}
         <span>than yesterday</span>
-      </p>
+      </div>
     </div>
   );
 };
