@@ -19,7 +19,7 @@
   }
 
   .primaryInfoBox_icon {
-    @apply text-white text-6xl;
+    @apply text-white;
   }
 
   .activeLink {
@@ -36,6 +36,7 @@
     @apply justify-self-start;
   }
 }
+
 
 .blue_gradient {
   background-image: linear-gradient(
