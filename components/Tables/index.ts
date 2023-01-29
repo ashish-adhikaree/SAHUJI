@@ -1,6 +1,11 @@
 import dynamic from "next/dynamic";
 
-export const PrimaryTable = dynamic(
-  () => import("./primaryTable.component").then((mod) => mod.PrimaryTable),
+export const BookingTable = dynamic(
+  () => import("./bookingTable.component").then((mod) => mod.BookingTable),
+  { ssr: false }
+);
+
+export const AdsTable = dynamic(
+  () => import("./adsTable.component").then((mod) => mod.AdsTable),
   { ssr: false }
 );

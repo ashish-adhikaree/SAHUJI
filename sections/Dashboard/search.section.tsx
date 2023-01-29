@@ -1,8 +1,7 @@
-import { SearchBar_Var1 } from "@/components/Search";
-import { PrimarySelect } from "@/components/Select";
+import { PrimarySearchBar, PrimarySelect } from "components";
 import { useState } from "react";
 
-export default function SearchSection() {
+export const Search = () => {
   const selectOptions = [
     { value: "week", title: "This Week" },
     { value: "month", title: "This Month" },
@@ -13,7 +12,7 @@ export default function SearchSection() {
 
   return (
     <div className="flex justify-between items-center mt-10">
-      <SearchBar_Var1 />
+      <PrimarySearchBar />
       <PrimarySelect
         options={selectOptions}
         selectedOption={setSelectedValue}

@@ -1,8 +1,8 @@
 import MonetizationOnRoundedIcon from "@mui/icons-material/MonetizationOnRounded";
 import ConfirmationNumberRoundedIcon from "@mui/icons-material/ConfirmationNumberRounded";
-import { PrimaryInfoCard } from "@/components/Cards";
+import { PrimaryInfoCard } from "components";
 
-const Summary = () => {
+export const Summary = () => {
   return (
     <div className="grid grid-cols-2 gap-3 py-10">
       <PrimaryInfoCard
@@ -23,4 +23,3 @@ const Summary = () => {
   );
 };
 
-export default Summary;
