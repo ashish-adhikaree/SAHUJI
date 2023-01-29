@@ -10,14 +10,14 @@ const Summary = () => {
         value="200"
         change={20}
         gradient="blue"
-        icon={<MonetizationOnRoundedIcon className="primaryInfoBox_icon text-6xl"/>}
+        icon={<MonetizationOnRoundedIcon className="primaryInfoBox_icon" sx={{ fontSize: "3.75rem" }}/>}
       />
       <PrimaryInfoCard
         title="bookings"
         value="21"
         change={-2}
         gradient="purple"
-        icon={<ConfirmationNumberRoundedIcon className="primaryInfoBox_icon text-6xl"/>}
+        icon={<ConfirmationNumberRoundedIcon className="primaryInfoBox_icon text-6xl" sx={{ fontSize: "3.75rem" }}/>}
       />
     </div>
   );
